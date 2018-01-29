@@ -1,6 +1,20 @@
 
 function roll (scoreArray){
-	let totalScore = scoreArray.reduce((prev,curr)=> prev+curr, 0);
+	let retArray = [];
+	let loop = 0;  // number of times loop runs should not exceed 10
+	for (let i=0; loop < 10; loop+=1, i += 2){
+		if (scoreArray[i] + scoreArray[i+1] > 10){ // strike
+			retArray.push(10 + scoreArray[i+1] + scoreArray[i+2]);
+			i -= 1; // so that one frame is not missed
+		}
+
+		else{
+			retArray.push(scoreArray[i] + scoreArray[i+1]);
+		}
+
+	}
+
+	let totalScore = retArray.reduce((prev,curr)=> prev+curr, 0);
 	return totalScore;
 }
 
