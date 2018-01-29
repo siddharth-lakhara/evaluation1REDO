@@ -16,4 +16,9 @@ describe('Basic cases: ', () => {
 			toBe(94);
 	});
 
+	test('Test for spare: ', () => {
+		expect(roll([4, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6])).
+			toBe(94);
+	});
+
 });
