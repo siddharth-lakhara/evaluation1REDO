@@ -8,6 +8,11 @@ function roll (scoreArray){
 			i -= 1; // so that one frame is not missed
 		}
 
+		else if (scoreArray[i] + scoreArray[i+1] === 10){ // strike followed by zero
+			retArray.push(10 + scoreArray[i+1] + scoreArray[i+2]);
+			i -= 1; // so that one frame is not missed
+		}
+    
 		else{
 			retArray.push(scoreArray[i] + scoreArray[i+1]);
 		}

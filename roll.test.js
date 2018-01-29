@@ -6,7 +6,14 @@ describe('Basic cases: ', () => {
 			toBe(90);
 	});
 
-	test('Test for strike: ', () =>
+	test('Test for basic strike: ', () => {
 		expect(roll([10, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6])).
-			toBe(100));
+			toBe(100);
+	});
+
+	test('special strike case: strike followed by zero: ', () => {
+		expect(roll([10, 0, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6, 3, 6])).
+			toBe(94);
+	});
+
 });
